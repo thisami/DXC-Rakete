@@ -28,16 +28,16 @@ public class Flug {
         setGeplanteAbflugzeit(zeit);
     }
 
-    public void astronautAustauschen(String schluesselAlt , String schluesselNeu) {
-        //TODO: Map Austausch Astronaut
+    public void astronautAustauschen(String schluesselAlt, String schluesselNeu) {
+        // TODO: Map Austausch Astronaut
     }
 
     public void losfliegen() {
         rakete.setGeschwindigkeit(100);
     }
 
-    public boolean flugbereit() {
-        //TODO: nüchtern überprüfen?
+    public boolean isFlugbereit() {
+        // TODO: nüchtern überprüfen?
         for (Astronaut astro : astronauten) {
             if (!astro.isNuechtern()) {
                 return false;
@@ -47,8 +47,12 @@ public class Flug {
         return Daten.bodenstation.isStartrampeSicher() && isWetterOkay() && isFlugbahnOkay() && isKommunikationAufgebaut();
     }
 
-    public boolean isWetterOkay() {
-        return wetterOkay;
+    public Rakete getRakete() {
+        return rakete;
+    }
+
+    public List<Astronaut> getAstronauten() {
+        return this.astronauten;
     }
 
     public LocalDateTime getGeplanteAbflugzeit() {
@@ -63,20 +67,16 @@ public class Flug {
         return kommunikationAufgebaut;
     }
 
-    public boolean isFlugbahnOkay() {
-        return flugbahnOkay;
-    }
-
     public void setKommunikationAufgebaut(boolean kommunikationAufgebaut) {
         this.kommunikationAufgebaut = kommunikationAufgebaut;
     }
 
-    public Rakete getRakete() {
-        return rakete;
+    public boolean isWetterOkay() {
+        return wetterOkay;
     }
 
-    public void addAstronaut(Astronaut astronaut) {
-        this.astronauten.add(astronaut);
+    public boolean isFlugbahnOkay() {
+        return flugbahnOkay;
     }
 
 }
