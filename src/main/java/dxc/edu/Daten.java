@@ -17,12 +17,12 @@ public class Daten {
 
         Flug tilosFlug = new Flug(tilosRakete);
 
-        Astronaut tilo = new Astronaut("Tilo", "So ein Eierkopp", false, Erfahrung.PROFI, "Wo ist mein Gehstock?", "Altenheim Limburg");
+        Astronaut tilo = new Astronaut("Tilo", "So ein Eierkopp", false, Erfahrung.ANFAENGER, "Wo ist mein Gehstock?", "Altenheim Limburg");
         tilosFlug.addAstronaut(tilo);
 
         Flug rubensFlug = new Flug(rubensRakete);
 
-        Astronaut ruben = new Astronaut("Ruben", "Sauber!", true, Erfahrung.ANFAENGER, "Worum gings gerade?", "Väter unter sich");
+        Astronaut ruben = new Astronaut("Ruben", "Sauber!", true, Erfahrung.PROFI, "Worum gings gerade?", "Väter unter sich");
         rubensFlug.addAstronaut(ruben);
     }
 
