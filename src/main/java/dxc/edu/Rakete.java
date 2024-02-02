@@ -16,6 +16,7 @@ public class Rakete {
 
     private boolean motorenLaufen = false;
 
+
     private int geschwindigkeit = 0;
 
     public Rakete() {
@@ -38,6 +39,10 @@ public class Rakete {
 
     public boolean isMotorenLaufen() {
         return motorenLaufen;
+    }
+
+    public void setGeschwindigkeit(int geschwindigkeit) {
+        this.geschwindigkeit = geschwindigkeit;
     }
 
 }
