@@ -5,11 +5,25 @@ import java.util.Map;
 
 public class Daten {
 
-    public static Map<String, Rakete> raketen = new HashMap<>();
+    public static Bodenstation bodenstation = new Bodenstation();
+
+    public static Map<String, Astronaut> astronauten = new HashMap<>();
+
+    public static Map<String, Flug> fluege = new HashMap<>();
 
     static {
-        raketen.put("tilosRakete", new Rakete("Tilos Rakete", "Blau", "Kowalski Indsturies", 8));
-        raketen.put("rubensRakete", new Rakete("Rubens Rakete", "Rot", "Schneewittchen Industries", 7));
+        Rakete tilosRakete = new Rakete("Tilos Rakete", "Blau", "Kowalski Indsturies", 8);
+        Rakete rubensRakete = new Rakete("Rubens Rakete", "Rot", "Schneewittchen Industries", 7);
+
+        Flug tilosFlug = new Flug(tilosRakete);
+
+        Astronaut tilo = new Astronaut("Tilo", "So ein Eierkopp", false, Erfahrung.PROFI, "Wo ist mein Gehstock?", "Altenheim Limburg");
+        tilosFlug.addAstronaut(tilo);
+
+        Flug rubensFlug = new Flug(rubensRakete);
+
+        Astronaut ruben = new Astronaut("Ruben", "Sauber!", true, Erfahrung.ANFAENGER, "Worum gings gerade?", "Väter unter sich");
+        rubensFlug.addAstronaut(ruben);
     }
 
 }
