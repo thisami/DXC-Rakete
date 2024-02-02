@@ -9,10 +9,10 @@ public class RaketeTest {
     @Test
     void testMotorenStarten() {
         Rakete rakete = new Rakete();
-        assertFalse(rakete.getMotorenLaufen());
+        assertFalse(rakete.isMotorenLaufen());
 
         rakete.motorenStarten();
-        assertTrue(rakete.getMotorenLaufen());
+        assertTrue(rakete.isMotorenLaufen());
 
         assertThrows(IllegalStateException.class, () -> rakete.motorenStarten());
     }
