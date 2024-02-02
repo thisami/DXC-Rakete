@@ -17,7 +17,7 @@ public class Bodenstation {
 
     public void flugStarten(String index) throws NullPointerException {
         Flug flug = Daten.fluege.get(index);
-        if (flug.flugbereit()) {
+        if (flug.isFlugbereit()) {
             if (flug.getRakete() != null) {
                 flug.losfliegen();
             } else {

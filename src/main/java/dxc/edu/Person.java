@@ -3,6 +3,7 @@ package dxc.edu;
 public abstract class Person {
 
     private String name;
+
     private String uniqueZitat;
 
     public Person(String name, String uniqueZitat) {
@@ -19,7 +20,7 @@ public abstract class Person {
     }
 
     public void uniqueZitatSagen() {
-
-        System.out.println(getUniqueZitat());
+        System.out.println(uniqueZitat);
     }
+
 }
