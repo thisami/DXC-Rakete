@@ -12,7 +12,16 @@ public class Rakete {
     private int geschwindigkeit = 0;
     private boolean motorenLaufen = false;
 
-    public void  motorenStarten(){
-        motorenLaufen = true;
+    public void  motorenStarten()throws IllegalStateException{
+        if (motorenLaufen){
+            throw new IllegalStateException("Motoren laufen bereits");
+        }
+        else {
+            motorenLaufen = true;
+        }
+    }
+
+    public boolean getMotorenLaufen(){
+        return motorenLaufen;
     }
 }
