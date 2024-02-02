@@ -16,7 +16,6 @@ public class Rakete {
 
     private boolean motorenLaufen = false;
 
-
     private int geschwindigkeit = 0;
 
     public Rakete() {

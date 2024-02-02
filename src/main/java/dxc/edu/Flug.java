@@ -3,6 +3,7 @@ package dxc.edu;
 import java.time.LocalDateTime;
 
 public class Flug {
+
     private boolean wetterOkay;
     private LocalDateTime geplanteAbflugzeit;
     private boolean kommunikationAufgebaut;
@@ -21,7 +22,7 @@ public class Flug {
         //TODO: Map Austausch Astronaut
     }
 
-    public void losfliegen() {
+    private void losfliegen() {
         rakete.setGeschwindigkeit(100);
     }
 
@@ -56,11 +57,4 @@ public class Flug {
         return flugbahnOkay;
     }
 
-    public Rakete getRakete() {
-        return rakete;
-    }
-
-    public void setKommunikationAufgebaut(boolean kommunikationAufgebaut) {
-        this.kommunikationAufgebaut = kommunikationAufgebaut;
-    }
 }
