@@ -10,18 +10,16 @@ public class Bodenstation {
     private boolean startrampeSicher = false;
     private boolean flugbahnBerechnet = false;
 
-    private Map<String, Flug> fluege = new HashMap<String, Flug>();
-
     public void flugbahnBerechnen() {
         System.out.println("Flugbahn wurde berechnet! Sie sind in der DB hinterlegt.");
         this.flugbahnBerechnet = true;
     }
 
     public void flugStarten(String index) throws NullPointerException {
-        Flug flug = fluege.get(index);
-        if (kommunikationAufgebaut && startrampeSicher && flugbahnBerechnet) {
-            if (flug.getRakete != null) {
-                flug.getRakete.motorenStarten();
+        Flug flug = Daten.fluege.get(index);
+        if (flug.flugbereit()) {
+            if (flug.getRakete() != null) {
+                flug.losfliegen();
             } else {
                 throw new NullPointerException("Es wurde keine Rakete diesen Flug hinzugefügt.");
             }
@@ -33,8 +31,8 @@ public class Bodenstation {
     }
 
     public void kommunikationAufbauen(String index) {
-        Flug flug = fluege.get(index);
-        flug.setBodenstation(this);
+        Flug flug = Daten.fluege.get(index);
+        flug.setKommunikationAufgebaut(true);
         this.kommunikationAufgebaut = true;
         System.out.println("Kommunikation zu Flug x wurde aufgebaut.");
     }

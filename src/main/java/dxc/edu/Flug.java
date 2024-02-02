@@ -22,7 +22,7 @@ public class Flug {
         //TODO: Map Austausch Astronaut
     }
 
-    private void losfliegen() {
+    public void losfliegen() {
         rakete.setGeschwindigkeit(100);
     }
 
@@ -57,4 +57,11 @@ public class Flug {
         return flugbahnOkay;
     }
 
+    public void setKommunikationAufgebaut(boolean kommunikationAufgebaut) {
+        this.kommunikationAufgebaut = kommunikationAufgebaut;
+    }
+
+    public Rakete getRakete() {
+        return rakete;
+    }
 }
