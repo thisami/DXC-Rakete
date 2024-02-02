@@ -1,15 +1,15 @@
-package org.example;
+package dxc.edu;
 
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class SimpleCalculatorTest {
+class DxcRaketeTest {
 
     @Test
     void multiplyTest() {
-        assertEquals(0, SimpleCalculator.multiply(0, 5));
-        assertEquals(0, SimpleCalculator.multiply(7, 0));
+        assertEquals(0, DxcRakete.multiply(0, 5));
+        assertEquals(0, DxcRakete.multiply(7, 0));
 
     }
 

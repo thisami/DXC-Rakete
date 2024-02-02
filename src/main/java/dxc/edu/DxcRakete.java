@@ -1,6 +1,6 @@
-package org.example;
+package dxc.edu;
 
-public class SimpleCalculator {
+public class DxcRakete {
 
     public static void main(String[] args) {
 
