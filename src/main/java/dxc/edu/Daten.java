@@ -12,8 +12,8 @@ public class Daten {
     public static Map<String, Flug> fluege = new HashMap<>();
 
     static {
-        Astronaut tilo = new Astronaut("Tilo", "So ein Eierkopp", Erfahrung.PROFI, "Wo ist mein Gehstock?", "Altenheim Limburg");
-        Astronaut ruben = new Astronaut("Ruben", "Sauber!", Erfahrung.ANFAENGER, "Worum gings gerade?", "Väter unter sich");
+        Astronaut tilo = new Astronaut("Tilo", "So ein Eierkopp", Erfahrung.ANFAENGER, "Wo ist mein Gehstock?", "Altenheim Limburg");
+        Astronaut ruben = new Astronaut("Ruben", "Sauber!", Erfahrung.PROFI, "Worum gings gerade?", "Väter unter sich");
 
         Rakete tilosRakete = new Rakete("Tilos Rakete", "Blau", "Kowalski Indsturies", 8);
         Rakete rubensRakete = new Rakete("Rubens Rakete", "Rot", "Schneewittchen Industries", 7);

@@ -23,16 +23,23 @@ public class Flug {
     }
 
     public void flugzeitVerzoegern(int minuten) {
-        LocalDateTime zeit = getGeplanteAbflugzeit();
-        zeit = zeit.plusMinutes(minuten);
-        setGeplanteAbflugzeit(zeit);
+        if (minuten > 0) {
+            LocalDateTime zeit = getGeplanteAbflugzeit();
+            zeit = zeit.plusMinutes(minuten);
+            setGeplanteAbflugzeit(zeit);
+        } else {
+            System.out.println("Fehler, gebe eine Zahl über Null an");
+        }
     }
 
-    public void astronautAustauschen(String schluesselAlt, String schluesselNeu) {
-        // TODO: Map Austausch Astronaut
+    public void astronautAustauschen(String schluesselAlt , String schluesselNeu) {
+        //TODO: Map Austausch Astronaut
+        astronauten.remove(schluesselAlt);
+        addAstronaut(Daten.astronauten.get(schluesselNeu));
     }
 
     public void losfliegen() {
+        rakete.motorenStarten();
         rakete.setGeschwindigkeit(100);
     }
 
@@ -67,6 +74,10 @@ public class Flug {
         return kommunikationAufgebaut;
     }
 
+    public boolean isFlugbahnOkay() {
+        return flugbahnOkay;
+    }
+
     public void setKommunikationAufgebaut(boolean kommunikationAufgebaut) {
         this.kommunikationAufgebaut = kommunikationAufgebaut;
     }
@@ -75,8 +86,8 @@ public class Flug {
         return wetterOkay;
     }
 
-    public boolean isFlugbahnOkay() {
-        return flugbahnOkay;
+    public void addAstronaut(Astronaut astronaut) {
+        this.astronauten.add(astronaut);
     }
 
 }
