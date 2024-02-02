@@ -2,26 +2,47 @@ package dxc.edu;
 
 public class Rakete {
 
-
-    private double treibstoffZustand;
-    private String farbe;
     private String name;
-    private int personenKapazitaet;
+
+    private String farbe;
+
     private String hersteller;
+
+    private int personenKapazitaet;
+
     private boolean nuklearAntrieb = false;
-    private int geschwindigkeit = 0;
+
+    private double treibstoffMenge = 0.0;
+
     private boolean motorenLaufen = false;
 
-    public void  motorenStarten()throws IllegalStateException{
-        if (motorenLaufen){
+
+    private int geschwindigkeit = 0;
+
+    public Rakete() {
+    }
+
+    public Rakete(String name, String farbe, String hersteller, int personenKapazitaet) {
+        this.name = name;
+        this.farbe = farbe;
+        this.hersteller = hersteller;
+        this.personenKapazitaet = personenKapazitaet;
+    }
+
+    public void motorenStarten() throws IllegalStateException {
+        if (motorenLaufen) {
             throw new IllegalStateException("Motoren laufen bereits");
-        }
-        else {
+        } else {
             motorenLaufen = true;
         }
     }
 
-    public boolean getMotorenLaufen(){
+    public boolean isMotorenLaufen() {
         return motorenLaufen;
     }
+
+    public void setGeschwindigkeit(int geschwindigkeit) {
+        this.geschwindigkeit = geschwindigkeit;
+    }
+
 }
