@@ -1,16 +1,26 @@
 package dxc.edu;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Flug {
 
-    private boolean wetterOkay;
-    private LocalDateTime geplanteAbflugzeit;
-    private boolean kommunikationAufgebaut;
-    private boolean flugbahnOkay;
-    private Astronaut[] astronaut;
     private Rakete rakete;
-    private Bodenstation bodenstation;
+
+    private List<Astronaut> astronauten = new ArrayList<>();
+
+    private LocalDateTime geplanteAbflugzeit;
+
+    private boolean kommunikationAufgebaut = false;
+
+    private boolean wetterOkay = true;
+
+    private boolean flugbahnOkay = true;
+
+    public Flug(Rakete rakete) {
+        this.rakete = rakete;
+    }
 
     public void flugzeitVerzoegern(int minuten) {
         LocalDateTime zeit = getGeplanteAbflugzeit();
@@ -28,13 +38,13 @@ public class Flug {
 
     public boolean flugbereit() {
         //TODO: nüchtern überprüfen?
-        for (Astronaut astro : astronaut) {
+        for (Astronaut astro : astronauten) {
             if (!astro.isNuechtern()) {
                 return false;
             }
         }
 
-        return bodenstation.isStartrampeSicher() && isWetterOkay() && isFlugbahnOkay() && isKommunikationAufgebaut();
+        return Daten.bodenstation.isStartrampeSicher() && isWetterOkay() && isFlugbahnOkay() && isKommunikationAufgebaut();
     }
 
     public boolean isWetterOkay() {
@@ -64,4 +74,9 @@ public class Flug {
     public Rakete getRakete() {
         return rakete;
     }
+
+    public void addAstronaut(Astronaut astronaut) {
+        this.astronauten.add(astronaut);
+    }
+
 }
