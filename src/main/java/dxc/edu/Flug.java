@@ -3,6 +3,7 @@ package dxc.edu;
 import java.time.LocalDateTime;
 
 public class Flug {
+
     private boolean wetterOkay;
     private LocalDateTime geplanteAbflugzeit;
     private boolean kommunikationAufgebaut;
@@ -55,4 +56,5 @@ public class Flug {
     public boolean isFlugbahnOkay() {
         return flugbahnOkay;
     }
+
 }
