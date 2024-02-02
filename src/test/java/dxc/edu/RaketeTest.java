@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class RaketeTest {
 
     @Test
-    void testMotorenStarten() {
+    void motorenStarten() {
         Rakete rakete = new Rakete();
         assertFalse(rakete.isMotorenLaufen());
 
