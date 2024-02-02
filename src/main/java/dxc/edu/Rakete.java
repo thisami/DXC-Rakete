@@ -2,21 +2,31 @@ package dxc.edu;
 
 public class Rakete {
 
-    private double treibstoffZustand;
+    private String name;
 
     private String farbe;
 
-    private String name;
+    private String hersteller;
 
     private int personenKapazitaet;
 
-    private String hersteller;
-
     private boolean nuklearAntrieb = false;
+
+    private double treibstoffMenge = 0.0;
+
+    private boolean motorenLaufen = false;
 
     private int geschwindigkeit = 0;
 
-    private boolean motorenLaufen = false;
+    public Rakete() {
+    }
+
+    public Rakete(String name, String farbe, String hersteller, int personenKapazitaet) {
+        this.name = name;
+        this.farbe = farbe;
+        this.hersteller = hersteller;
+        this.personenKapazitaet = personenKapazitaet;
+    }
 
     public void motorenStarten() throws IllegalStateException {
         if (motorenLaufen) {
