@@ -15,11 +15,12 @@ public class Bodenstation {
         this.flugbahnBerechnet = true;
     }
 
-    public void flugStarten(String index) throws NullPointerException {
-        Flug flug = Daten.fluege.get(index);
+    public void flugStarten(String schluessel) throws NullPointerException {
+        Flug flug = Daten.fluege.get(schluessel);
         if (flug.isFlugbereit()) {
             if (flug.getRakete() != null) {
                 flug.losfliegen();
+                System.out.println("Der Flug wurde gestartet! Viel Spaß im All Kameraden!");
             } else {
                 throw new NullPointerException("Es wurde keine Rakete diesen Flug hinzugefügt.");
             }
@@ -27,11 +28,12 @@ public class Bodenstation {
             System.out.println("Es sind noch nicht alle Vorbereitungen getätigt worden um den Flug zu starten.");
         }
 
-        System.out.println("Der Flug wurde gestartet! Über die Reise wird euch " + kontaktperson.getName() + " betreuen. Viel Spaß im All Kameraden!");
+
+//        System.out.println("Der Flug wurde gestartet! Über die Reise wird euch " + kontaktperson.getName() + " betreuen. Viel Spaß im All Kameraden!");
     }
 
-    public void kommunikationAufbauen(String index) {
-        Flug flug = Daten.fluege.get(index);
+    public void kommunikationAufbauen(String schluessel) {
+        Flug flug = Daten.fluege.get(schluessel);
         flug.setKommunikationAufgebaut(true);
         this.kommunikationAufgebaut = true;
         System.out.println("Kommunikation zu Flug x wurde aufgebaut.");
