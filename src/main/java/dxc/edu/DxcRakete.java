@@ -3,7 +3,6 @@ package dxc.edu;
 public class DxcRakete {
 
     public static void main(String[] args) {
-
     }
 
     public static int multiply(int numberOne, int numberTwo) {
@@ -11,6 +10,7 @@ public class DxcRakete {
     }
 
     public static double divide(double numberOne, double numberTwo) {
-        return numberOne/numberTwo;
+        return numberOne / numberTwo;
     }
+
 }

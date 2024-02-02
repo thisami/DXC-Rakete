@@ -10,10 +10,10 @@ class DxcRaketeTest {
     void multiplyTest() {
         assertEquals(0, DxcRakete.multiply(0, 5));
         assertEquals(0, DxcRakete.multiply(7, 0));
-
     }
 
     @Test
     void divideTest() {
     }
+
 }
